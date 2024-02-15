@@ -8,18 +8,22 @@ public class FilterStringArray {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Please, enter any words separated by space: ");
+		
 		String userInput = sc.nextLine();
 		System.out.print("Please, enter minumum word length to filter words: ");
 		int minLength = sc.nextInt();
 		
+		//SPLITING WORDS WITH SPACE
 		String[] words = userInput.split("\\s+");
+		
 		//String[] filteredWords = filterWordsByLength(minLength, words);
 		String[] filteredWords = filterWordsByLengthStreamApi(minLength, words);
+		
 		System.out.println(Arrays.toString(filteredWords));
 	}
 
 	/*
-	
+	//SOLUTION WITHOUT STREAM API
 	public static String[] filterWordsByLength(int minLength, String[] words) {
 		String[] filteredArray = new String[words.length];
 		for (int i = 0; i < words.length; i++) {
@@ -54,7 +58,7 @@ public class FilterStringArray {
 		
 		return filteredArray;
 	}
-*/
+*/	
 
 
 	//===================== SOLUTION WITH STREAM API
